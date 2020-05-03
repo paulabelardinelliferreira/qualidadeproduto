@@ -21,9 +21,23 @@ public class AppTest
         assertEquals(expected, actual);
     }
 	@Test
-    public void testIsosceles()
+    public void testIsoscelesT1()
     {
         int actual = App.identificaTriangulo(6, 6, 7);
+        int expected = tipos.ISOSCELES.value();
+        assertEquals(expected, actual);
+    }
+	@Test
+    public void testIsoscelesT2()
+    {
+        int actual = App.identificaTriangulo(6, 7, 6);
+        int expected = tipos.ISOSCELES.value();
+        assertEquals(expected, actual);
+    }
+	@Test
+    public void testIsoscelesT3()
+    {
+        int actual = App.identificaTriangulo(7, 6, 6);
         int expected = tipos.ISOSCELES.value();
         assertEquals(expected, actual);
     }
@@ -42,10 +56,47 @@ public class AppTest
         assertEquals(expected, actual);
     }
 	@Test
-	public void testNaoTriangulo()
+	public void testLinhaT1()
 	{
 		int actual = App.identificaTriangulo(1, 2, 3);
 		int expected = tipos.NAO_TRIANGULO.value();
 		assertEquals(expected, actual);
 	}
+	@Test
+	public void testLinhaT2()
+	{
+		int actual = App.identificaTriangulo(1, 3, 2);
+		int expected = tipos.NAO_TRIANGULO.value();
+		assertEquals(expected, actual);
+	}
+	@Test
+	public void testLinhaT3()
+	{
+		int actual = App.identificaTriangulo(3, 1, 2);
+		int expected = tipos.NAO_TRIANGULO.value();
+		assertEquals(expected, actual);
+	}
+	@Test
+	public void testLinhaLongaT1()
+	{
+		int actual = App.identificaTriangulo(1, 2, 8);
+		int expected = tipos.NAO_TRIANGULO.value();
+		assertEquals(expected, actual);
+	}
+	@Test
+	public void testLinhaLongaT2()
+	{
+		int actual = App.identificaTriangulo(8, 1, 2);
+		int expected = tipos.NAO_TRIANGULO.value();
+		assertEquals(expected, actual);
+	}
+	/*@Test
+	 * Esse teste corresponde a última variação possível da tabela de referência, porém não faz sentido, 
+	 * pois se os 3 valores estiverem zerados, não temos uma forma geométrica para calcular, o que torna os parâmetros inválidos.
+	public void testTodosZero()
+	{
+		int actual = App.identificaTriangulo(0, 0, 0);
+		int expected = tipos.NAO_TRIANGULO.value();
+		assertEquals(expected, actual);
+	}*/
 }
