@@ -30,9 +30,21 @@ public class AppTest
 	@Test
     public void testInvalido()
     {
-        int actual = App.identificaTriangulo(6, 6, -7);
-        int expected = tipos.INVALIDO.value();
+        int actual = App.identificaTriangulo(8, 0, 9);
+        int expected = tipos.ENTRADA_INVALIDA.value();
         assertEquals(expected, actual);
-    }
-
+    }	
+	/*public void testInvalido()
+    {
+        int actual = App.identificaTriangulo(6, 6, -7);
+        int expected = tipos.ENTRADA_INVALIDA.value();
+        assertEquals(expected, actual);
+    }*/	
+	@Test
+	public void testNaoTriangulo()
+	{
+		int actual = App.identificaTriangulo(1, 2, 3);
+		int expected = tipos.NAO_TRIANGULO.value();
+		assertEquals(expected, actual);
+	}
 }

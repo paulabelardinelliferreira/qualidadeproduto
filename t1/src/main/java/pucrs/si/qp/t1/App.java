@@ -22,8 +22,11 @@ public class App {
 				return tipos.ESCALENO.value();
 			else
 				return tipos.ISOSCELES.value();
+		}else if ((a == 0) || (b == 0) || (c == 0)) {
+			return tipos.ENTRADA_INVALIDA.value();
+		} else {
+		return tipos.NAO_TRIANGULO.value();
 		}
-		return tipos.INVALIDO.value();
 	}
 
 	/**
